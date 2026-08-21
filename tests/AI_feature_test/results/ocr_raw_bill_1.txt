@@ -1,0 +1,60 @@
+# TAX INVOICE
+
+## KOL_12.30AM (LR): R/67
+
+**SASTASUNDAR HEALTHBUDDY LIMITED**
+VII Salepur Purba (Dr. Norman Bethune Sarani) PO & PS
+DAHURIA, DAHURIA, P.O. DAHURIA
+MOUZA-SALEPUR, GR. FLOOR 1ST FLOOR & 2N
+BARUIPUR-700144
+Ph: 8262020002 E-mail: www.thikatha.sastasundar.com
+
+**STATE:** WEST BENGAL(19)
+**GSTIN:** 19AАНСМ0651P1ZO
+**DL No.:** WB/PGS/NB/W/754049/WB/PGS/BIO/W/754049
+**CIN No.:** U15411WB2011PLC180195
+**Invoice No.:** 443TB1472140
+**Dated:** 11-08-2026 (01:46 AM)
+**Order No.:** 22242478837
+**Checked By:** Avijit Ghosh
+**Packed By:** Shyamal Kumar Sa
+
+**LONG ROUTE ORDER**
+
+| Sr. | Description of Goods | Hsn/Sac | Qty | Unit | Batch | MKT | Exp. Dt | Old Mrp | Rate | Disc % | Net Valu Rate | Taxable % | SGST % | CGST % | Amount |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| 1 | CETAPHIL GENTLE SKIN CLEANSER 118 ML | 30049030 | 1 | PACK | 1 | BBA1260 | GAL | 11/26 | 0.00 459.00 | 311.19 | 6.00 | 292.52 | 292.52 | 2.50 | 2.50 | 345.16 |
+| 2 | CLOPITAB CV 40 TABLET (10 TAB) | 30049099 | 1 | STRIP | 0302ERT | LUP | 03/26 | 0.00 459.00 | 204.85 | 6.00 | 192.59 | 192.59 | 2.50 | 2.50 | 202.21 |
+| 3 | GABAPIN NT TABLET (15 TAB) | 30049091 | 1 | STRIP | N2610550 | INT | 03/29 | 0.00 515.63 | 392.88 | 6.00 | 369.20 | 369.20 | 2.50 | 2.50 | 387.75 |
+| 4 | LIPICARD 150 MG TABLET (10 TAB) | 30049099 | 1 | STRIP | 26027010 | USV | 01/28 | 0.00 223.00 | 237.87 | 6.00 | 159.72 | 159.72 | 2.50 | 2.50 | 167.70 |
+| 5 | REVITAL CAL 500 15 TABLETS | 30045090 | 1 | PACK | 1 | FHO018 | SUN | 04/28 | 0.00 133.00 | 141.87 | 6.00 | 95.26 | 95.26 | 2.50 | 2.50 | 100.02 |
+| 6 | COD CHARGES | 997158 | | OTH | 1 | | | | | | | | 4.89 | | 18.00 | 5.77 |
+| 7 | PLATFORM FEES | 997709 | | OTH | 1 | | | | | | | | 2.71 | | 18.00 | 3.19 |
+
+**Amt In Words:** One Thousand Two Hundred Twelve Rupees only
+
+| TAX% | GROSS AMT | DISC AMT | TAXABLE% | SGST AMT | CGST% | CGST AMT |
+|---|---|---|---|---|---|---|
+| 0% | 1180.66 | 70.80 | 1109.86 | 0% | 1109.86 | 0% | 7.60 |
+| 5.0% | 868.98 | 50.86 | 818.68 | 5.0% | 20.00 | 2.5% | 20.41 |
+
+| | | | | | | |
+|---|---|---|---|---|---|---|
+| | | | | SUBTOTAL | : | 1116.98 |
+| | | | | DISCOUNT | : | 46.28 |
+| | | | | SGST AMT | : | 46.73 |
+| | | | | TOTAL TAX AMT : | 94.82 |
+
+**Party Name:** AHAMADULLAH MEDICURE
+**DAG NO. 729 KH NO. 714, PARA SINGJUR MOROL PARA, JL NO. 42, MOUZA**
+**SINGJUR, BHAGABATIPUR, CHANDITALA PS, Hooghly-712701**
+**Phone No.:** 9382497926
+**GSTIN:**
+**DL No.:** WB/HGL/BIO/R/754491/WB/HGL/NB/R/754491/
+**STATE:** WEST BENGAL
+**Mobile:** 9382497926
+**FSSAI No.:** 0
+
+--- SPLIT ---
+
+7 PLATFORM FEES 699799 OTH 1 2.71 18.00 3.10 Total 5 Amt in Words: One Thousand Two Hundred Twelve Rupees only SUBTOTAL 1116.98 TAX% GRCSS AMT DISC AMT TAXABLE SGST% SGST AMT CGST% CGST AMT DISCOUNT 46.78 0% 1150,60 70.00 1109.88 %0 1109.60 0% 7,60 SGST AMT 46,73 5.0% 868.99 50.00 810.68 3.0% 20.00 2.5% 20.41 TOTAL TAX AMT: 94.82 12.0% 0.00 0.00 0.00 10.0% 0.00 6.0% 0.00 Coupon Disc. 0.00 18.0% 317.69 19.62 292.60 18.0% 26.38 9.0% 26.32 Online Paid 0.00 28.0% 0.00 0.00 0.00 28.0% 0.00 14.0% 0.00 e-Wallet Paid 4.89 Terms & Conditions INV TOTAL : 1212.00 Invoice will be emailed to you on your registered email-id within 48 hours Amount Payable / (Refundable} 1207.11 In case of any discrepancy, please revert within 24 hours on our email id- accounts@retailershakti.com For SASTASUNDAR HEALTHBUDDY LIMITED Office INNOVATION TOWER, STH FLOOR, PREMISES NO. 16-315, PLOT NO.DH6/32, ACTION AREA1D, NEWTOWN, RAJARHAT, KOLKATA-700156 Authorised Signatory. Page 1 of 1 11/08/26 01:40 AM

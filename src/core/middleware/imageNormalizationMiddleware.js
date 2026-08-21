@@ -1,4 +1,6 @@
 import path from "path";
+import sharp from "sharp";
+import heicConvert from "heic-convert";
 
 const MAX_SIZE = 950 * 1024; // 950KB safety margin
 
@@ -26,18 +28,18 @@ const normalizeImage = async (req, res, next) => {
             });
         }
 
-        // First pass
+        // First pass: Optimize contrast and sharpen resolution for small OCR text
         buffer = await sharp(buffer)
             .rotate()
             .grayscale()
             .normalize()
-            .sharpen()
+            .sharpen({ sigma: 1.2 })
             .resize({
-                width: 1800,
+                width: 3000,
                 withoutEnlargement: true,
             })
             .jpeg({
-                quality: 80,
+                quality: 85,
                 mozjpeg: true,
             })
             .toBuffer();

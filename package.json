@@ -9,7 +9,8 @@
     "dev": "nodemon index.js",
     "test:unit": "cross-env NODE_OPTIONS=--experimental-vm-modules jest --config config/jest.config.js tests/unit --forceExit",
     "test:integration": "cross-env NODE_OPTIONS=--experimental-vm-modules jest --config config/jest.config.js tests/integration --forceExit",
-    "test:e2e": "cross-env NODE_OPTIONS=--experimental-vm-modules jest --config config/jest.config.js tests/e2e --runInBand --forceExit"
+    "test:e2e": "cross-env NODE_OPTIONS=--experimental-vm-modules jest --config config/jest.config.js tests/e2e --runInBand --forceExit",
+    "test:ai": "node tests/AI_feature_test/aiPipelineBenchmark.js"
   },
   "keywords": [],
   "author": "",
@@ -36,7 +37,6 @@
     "nodemailer": "^8.0.10",
     "nodemon": "^3.1.11",
     "openai": "^6.44.0",
-    "paddleocr": "^1.1.1",
     "pdfkit": "^0.17.2",
     "sharp": "^0.34.5",
     "tesseract.js": "^7.0.0",

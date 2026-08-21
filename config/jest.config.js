@@ -10,7 +10,7 @@ export default {
   testPathIgnorePatterns: ['/node_modules/'],
   globalSetup: './tests/setup/globalSetup.js',
   globalTeardown: './tests/setup/globalTeardown.js',
-  setupFilesAfterSetup: [],
+  setupFilesAfterEnv: [],
   testTimeout: 30000,
   verbose: true,
   forceExit: true,

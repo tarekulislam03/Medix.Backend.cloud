@@ -1,0 +1,192 @@
+# CLASS MATE
+
+## TAX INVOICE
+KOL 12.30AM (LR): R/67
+
+**SRI GURUDAS HEALTHBUDDY LIMITED**
+LR 412 & 410, NORMAN BETHUNE BARUIPUR RD & FE BARUIPUR
+KOLKATA-700139, WEST BENGAL
+STATE: WEST BENGAL(19)
+GSTIN: BAAHOMOSSIP120
+DL. No.: WB/PGS/NBO/W/754049/WB/PGS/BIO/W/734049
+CIN No.: U15411WB2011PLC160195
+Inv No: 443781459134
+Dated: 10-08-2026 (01:08 AM)
+Order No :22142451889
+Checked By: Shouvik Roy
+Packed By: Sukanta Debnath
+
+Party Name: AHAMADULLAH MEDICURE
+DAT NO 729,KH NO 714, PARA SINGJOR MOROL PARA, JL NO 42, MOUZA
+BINGJOR, BHAGABATIPUR, CHANDITALA PS, Hooghly-712701
+Pte No: 9382497926
+GSTIN:
+Mobile: 9382497926
+FSSAI No: 0
+DL No: WB/HGL/BIOR/754491/WB/HGL/NBO/R/714451/
+STATE: WEST BENGAL
+
+## LONG ROUTE ORDER
+
+| St | Description of Goods                               | Hsn/Bec | Qty | Unit   | Batch     | Mkt   | Exp Dt | Old Mrp | Rate | Disc % | Net Taxable Value | CGST % | SGST % | Amount |
+|----|----------------------------------------------------|---------|-----|--------|-----------|-------|--------|---------|------|--------|-------------------|--------|--------|--------|
+| 1  | CLARIBID 250 MG TABLET (10 TAB)                    | 30042063| 2   | STRIP  | MBL0111   | ABS   | 11/23  | 274.15  | 105.82 | 6.00   | 184.07            | 368.14 | 2.50   | 2.50   | 386.54 |
+| 2  | CREMAFFIN MIXED FRUIT FLAVOUR SUGAR FREE EMULSION 225 M | 30049032| 1   | BOTTLL | 90200807  | ABB   | 05/28  | 339.83  | 247.75 | 6.00   | 220.19            | 228.18 | 2.50   | 2.50   | 239.58 |
+| 3  | DUPHALAC (LEMON FLAVOR) ORAL SOLUTION 150 ML       | 30049039| 1   | PHILE  | 91314307  | ABB   | 06/28  | 108.14  | 150.00 | 8.00   | 141.00            | 141.00 | 2.50   | 2.50   | 145.98 |
+| 4  | ESOMER L CAPSULE (10 CAP)                          | 30040039| 1   | STRIP  | GZEEMACCE | GLE   | 06/20  | 330.00  | 142.15 | 0.00   | 142.15            | 142.15 | 2.50   | 2.50   | 149.25 |
+| 5  | FABOLITE ORANGE FLAVOUR SUGAR FREE POWDER 100 G    | 30040039| 1   | PHILE  | UAM0001   | ABB   | 12/27  | 280.40  | 200.35 | 6.00   | 188.33            | 188.33 | 2.50   | 2.50   | 197.73 |
+| 6  | GLIMY 2 MG TABLET (15 TAB)                         | 30049099| 1   | STRIP  | E2001221  | DR    | 04/29  | 99.52   | 71.00  | 5.00   | 66.52             | 66.52  | 2.50   | 2.50   | 70.10  |
+| 7  | LEVOLIN INHALER 12 G (200 METERED DOSES)           | 30040091| 1   | INHALE | BSN0401   | CIP   | 08/27  | 310.77  | 221.98 | 6.00   | 208.56            | 208.56 | 2.50   | 2.50   | 219.09 |
+| 8  | OXRA 10 MG TABLET (14 TAB)                         | 30049099| 1   | STRIP  | SIH0722A  | SUN   | 03/29  | 238.01  | 170.00 | 6.00   | 159.80            | 159.80 | 2.50   | 2.50   | 167.78 |
+| 9  | PANTOCID DSR CAPSULE (15 CAP)                      | 30040039| 1   | STRIP  | GTH1763A  | SUN   | 05/28  | 268.00  | 192.14 | 0.00   | 180.61            | 180.61 | 2.50   | 2.50   | 189.63 |
+| 10 | PEPSIGARD O SUSPENSION 200 ML                      | 30049009| 1   | PACK 1 | PO2006    | SAF   | 05/29  | 351.74  | 251.26 | 6.00   | 236.18            | 236.18 | 2.50   | 2.50   | 247.55 |
+| 11 | COD CHARGES                                        | 997158  |     | OTH 1- |           |       |        |         |        |        |                   |        |        | 6.53   |
+| 12 | PLATFORM FEES                                      | 999799  |     | OTH 1- |           |       |        |         |        |        |                   |        |        | 4.74   |
+|    | Total                                              | 11      |     |        |           |       |        |         |        |        |                   |        |        |        |
+
+Amt In Words: Two Thousand Thirty Rupees only
+
+| TAX% | GROSS AMT | DISC AMT | TAXABLE | SGST% | SGST AMT | CGST% | CGST AMT |
+|------|-----------|----------|---------|-------|----------|-------|----------|
+|      |           |          |         |       |          |       |          |
+
+SUBTOTAL: 1932.02
+DISCOUNT:
+
+--- SPLIT ---
+
+4
+ESOMER L CAPSULE (10 CAP)
+30040039
+1
+STRIP GZEEMACCE
+GLE
+00/20
+317.61
+330.00 142.15 0.00 142.15 142.15 2.50 2.50
+149.25
+5 FABOLITE ORANGE FLAVOUR SUGAR 30048039
+1
+PHILE UAM0001
+ABS
+12/27
+280.40 200.35 6.00 188.33 188.33 2.50 2.50
+202.96
+197.3
+FREE POWDER 100 G
+6 GLIMY 2 MG TABLET (15 TAB)
+30049099
+STRIP E2001221
+DR
+04/29
+99.52 71.00
+5.00 06.52 5582 2.50 2.50
+70.10
+93.30
+7 LEVOLIN INHALER 12 G (200 METERED 30040091
+DOSES)
+1
+INHALE 55N0401
+CIP
+08/27
+310.77 221.98
+6.00 208.56 208.05 2.50 2.50
+219.09
+291.35
+8 OXRA 10 MG TABLET (14 TAB)
+30043098
+STRIP SIH0722A
+SUN
+03/29
+238.01 170.00
+6.00 150.00 159 80 2.50 2.50
+157.78
+2013
+9 PANTOCID DSR CAPSULE (15 CAP)
+30040039
+1
+STRIP GTH17634
+SUN 05/28
+200.00 102.14 0.00 180.01 180.61 2.50 2.50
+252.19
+109.03
+10 PEPSIGARD O SUSPENSION 200 ML
+30049009
+1 PACK 1 PO2006
+SAF
+05/29
+351.74 251.20 6.00 236.18 236.18 2.50 2.50
+329.76
+247.55
+11 COD CHARGES
+997158
+OTH 1
+7.23
+18.00
+6.53
+12 PLATFORM FEES
+999799
+OTH 1-
+4.02
+18.00
+474
+Total 11
+Amt In Words: Two Thousand Thirty Rupees only
+SUBTOTAL
+1932.02
+TAX% GROSS AMT DISC AMT TAXABLE SGST% SGST AMT CGST% CGST AMT
+DISCOUNT
+9
+0%
+2034.34 110.00 1920.25 0% 1920.28 0%
+11.24
+ICES TAMANT
+42.02
+5.0%
+2030.05
+110.60
+1920.00 5.8%
+40.00 2.6%
+SGSTAMT
+47.97
+47.97
+TOTAL TAX AMT:
+97.96
+12.0%
+0.00
+0.00
+0.00 12.0%
+0.00 6.0%
+0.00
+Coupon Disc.
+0.00
+18.0%
+10.00
+0.00
+10.06 18.0%.
+0.00 9.0%
+0.00
+Online Paid
+0.00
+28.0%
+0.00
+0.00
+0.00 28.0%
+0.00 14.0%
+0.00
+o-Vallet Pald
+137.37
+Terms & Conditions
+Invoice will be emailed to you on your registered email-id within 48 hours
+In case of any discrepancy, please revert within 24 hours on our email id-
+accounts@retailershakti.com
+Office INNOVATION TOWER, 5TH FLOOR, PREMISES NO. 16-315,
+PLOT NO.DHSIZ, ACTION AREAID, NEWTOWN, RAJARHAT, KOLKATA-700150
+INV TOTAL:
+2030.00
+Amount Payable / (Refundable)
+1892.63
+For SASTASUNDAR HEALTHBUDDY LIMITED
+Authorised Signatory.
+Page 1 of 1
+10/08/26 01:08 AM

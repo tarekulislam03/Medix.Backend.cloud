@@ -5,14 +5,19 @@ import { normalizeImage } from "../../../core/middleware/imageNormalizationMiddl
 
 const productRouter = Router();
 
-productRouter.post("/create", createProduct);
-productRouter.get("/get", getProducts);
-productRouter.get("/get/:id", getProductById);
-productRouter.put("/update/:id", updateProduct);
-productRouter.delete("/delete/:id", deleteProduct);
+productRouter.get("/", getProducts);
+productRouter.post("/", createProduct);
+productRouter.get("/search", searchProduct);
 productRouter.get("/lowstock", lowStock);
 productRouter.get("/soontoexpiry", soonToExpiry);
-productRouter.get("/search", searchProduct);
+productRouter.get("/get", getProducts);
+productRouter.post("/create", createProduct);
+productRouter.get("/get/:id", getProductById);
+productRouter.get("/:id", getProductById);
+productRouter.put("/update/:id", updateProduct);
+productRouter.put("/:id", updateProduct);
+productRouter.delete("/delete/:id", deleteProduct);
+productRouter.delete("/:id", deleteProduct);
 productRouter.get("/loose-price/:id", getLooseMedicinePrice);
 productRouter.post("/bulk-from-master", bulkAddFromMaster);
 

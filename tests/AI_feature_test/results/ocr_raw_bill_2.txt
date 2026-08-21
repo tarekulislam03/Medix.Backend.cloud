@@ -1,0 +1,160 @@
+SASTASUNDAR HEALTHBUDDY LIMITED
+Vill Salepur Purbo (Dr. Norman Bethune Sarani) PO & PS Baruipur
+DAG LR 412 & 414,410(P), 437(P)
+MOUZA-SALEPUR, GR. FLOOR, 1ST FLOOR & 2N
+BARUIPUR-700144
+Ph: 6292002002, E-mail: ewaybillkolkata@sastasundar.com
+STATE: WEST BENGAL (19)
+GSTIN: 19AAHCM0651P1Z0
+DL No.: WB/PGS/NBO/W/754049/WB/PGS/BIO/W/754049
+CIN No.: U15411WB2011PLC160195
+Inv No: 443TG133106
+Dated: 09-08-2026 (10:57 PM)
+Order No: 22142453037
+Checked By: Satyabrata Naska
+Packed By: Satyabrata Naskar
+
+TAX INVOICE
+KOL_12.30AM (LR): R/67
+2 2 1 4 2 4 5 3 0 3 7-4 6 7 6 7 3 5*
+Party Name: MEDLIFE PHARMACY
+JL NO-18, KH NO-934, DAG NO-68,, MUKUNDAPUR, MASAT BAZAR, MASAT,
+CHANDITALA PS, MASAT HOOGHLY, MASAT BAZAR, Hooghly Hooghly-712701
+Phone No: 8327334600
+GSTIN: 19ERRPA4687K1ZY
+Mobile: 8327334600
+FSSAI No: 22826086000085
+DL No: WB/HGL/BIO/R/790840/WB/HGL/NBO/R/790840/
+STATE: WEST BENGAL
+
+LONG ROUTE ORDER
+
+| Sr. | Description of Goods                                                              | Hsn / Sac | Qty | Unit   | Batch        | MKT | Exp Dt | Old Mrp | Disc % | Rate % | Taxable Value % | CGST % | SGST % | Amount |
+| :-- | :-------------------------------------------------------------------------------- | :-------- | :-- | :----- | :----------- | :-- | :----- | :------ | :----- | :----- | :-------------- | :----- | :----- | :----- |
+| 1   | KELLOGGS OATS (FREE KELLOGGS OATS 200 G) POUCH 900 G                              | 11041200  | 1   | PACK 1 | FS4B180726   | KEL | 07/27  | 0.00    | 0.00   | 170.74 | 170.74          | 2.50   | 2.50   | 179.26 |
+|     |                                                                                   |           |     |        |              |     |        | 199.00  |        |        |                 |        |        |        |
+| 2   | KELLOGGS OATS POUCH 200 G                                                         | 11041200  | 1   | PACK 1 | ES4A050326   | KEL | 03/27  | 58.00   | 0.00   | 49.75  | 49.75           | 2.50   | 2.50   | 52.23  |
+|     |                                                                                   |           |     |        |              |     |        | 58.00   |        |        |                 |        |        |        |
+| 3   | SAFFOLA MASALA OATS VEGGIE TWIST WITH MILLETS POUCH 550 G                         | 11041200  | 1   | PACK 1 | AC03261122   | MAR | 03/27  | 0.00    | 0.00   | 226.23 | 226.23          | 2.50   | 2.50   | 237.53 |
+|     |                                                                                   |           |     |        |              |     |        | 260.00  |        |        |                 |        |        |        |
+| 4   | SAFFOLA SOFT & CREAMY INSTANT ROLLED OATS POUCH (FREE SAFFOLA OATS 300 G) 1 KG | 11041200  | 1   | PACK 1 | AB0426GG05   | MAR | 04/27  | 0.00    | 0.00   | 219.27 | 219.27          | 2.50   | 2.50   | 230.23 |
+|     |                                                                                   |           |     |        |              |     |        | 252.00  |        |        |                 |        |        |        |
+| 5   | COD CHARGES                                                                       | 997158    |     | OTH 1- |              |     |        |         |        |        |                 |        |        | 1.60   |
+| 6   | PLATFORM FEES                                                                     | 999799    |     | OTH 1- |              |     |        |         |        |        |                 |        |        | 0.88   |
+|     | Total                                                                             | 4         |     |        |              |     |        |         | 1.36   | 18.00  |                 |        |        |        |
+|     |                                                                                   |           |     |        |              |     |        |         | 0.75   | 18.00  |                 |        |        |        |
+
+--- SPLIT ---
+
+MELHEIF
+2
+KELLOGGS OATS POUCH 200 G
+11041200
+1
+PACK 1 ES4A050326
+58.00
+58.00
+3
+SAFFOLA MASALA OATS VEGGIE
+11041200
+1
+PACK 1 AC03261122
+MAR
+03/27
+0.00
+TWIST WITH MILLETS POUCH 550 G
+0.00 226.23 226.23 2.50 2.50
+237.53
+260.00
+4
+SAFFOLA SOFT & CREAMY INSTANT
+11041200
+1
+PACK 1 AB0426GG05 MAR
+04/27
+ROLLED OATS POUCH (FREE
+SAFFOLA OATS 300 G) 1 KG
+0.00
+252.00
+0.00 219.27 219.27 2.50 2.50
+230.23
+5
+COD CHARGES
+6
+PLATFORM FEES
+997158
+OTH 1
+999799
+OTH 1-
+Total 4
+1.36
+18.00
+1.60
+0.75
+18.00
+0.88
+Amt In Words: Seven Hundred One Rupees and Seventy Three paisa only
+SUBTOTAL
+TAX% GROSS AMT DISC AMT TAXABLE SGST% 9GST AMT CGST% CGST AMT
+DISCOUNT
+:
+:
+668.10
+0%
+669.99
+0.00
+662.99
+0%
+669.92
+0%
+2.12
+C245S TANMT
+16.63
+5.0%
+660.00
+0.00
+668.00 5.8%
+16.00 2.5%
+16.63
+SGST AMT
+12.0%
+0.00
+0.00
+0.00 12.0%
+0.00 6.0%
+0.00
+TOTAL TAX AMT :
+16.63
+33.63
+18.0%
+0.00
+0.00
+9.00 18.0%
+0.00 9.0%
+Coupon Disc.
+0.00
+0.00
+Online Paid
+28.0%
+0.00
+0.00
+0.00 28.0%
+0.00 14.0%
+0.00
+0.00
+e-Wallet Paid
+0.00
+Terms & Conditions
+Invoice will be emailed to you on your registered email-id within 48 hours
+In case of any discrepancy, please revert within 24 hours on our email id-
+accounts@retailershakti.com
+Office INNOVATION TOWER, 5TH FLOOR, PREMISES NO. 16-315,
+PLOT NO.DH6/32, ACTION AREA1D, NEWTOWN, RAJARHAT, KOLKATA-700156
+INV TOTAL:
+Amount Payable / (Refundable)
+701.73
+701.73
+Page 1 of 1
+09/08/26 10:57 PM
+For SASTASUNDAR HEALTHBUDDY LIMITED
+Authorised Signatory.

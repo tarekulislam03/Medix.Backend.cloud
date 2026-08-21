@@ -11,7 +11,7 @@
  */
 export const safeParseJSON = (text) => {
   if (!text || typeof text !== "string") {
-    throw new Error("Input is null, undefined, or not a string");
+    throw new Error("Invalid AI response format");
   }
 
   // ── Step 1: Strip markdown fences & surrounding whitespace ────────────

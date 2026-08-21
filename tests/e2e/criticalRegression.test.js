@@ -120,6 +120,7 @@ describe('Critical Flows Regression E2E', () => {
     it('Step 4: Should auto import and update existing inventory / insert new', async () => {
         // Arrange
         const importPayload = {
+            purchaseId: IDS.store.toString(),
             items: [
                 {
                     medicine_name: "E2E_TEST_MEDICINE", // Same name

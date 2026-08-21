@@ -67,16 +67,19 @@ const uploadBill = async (req, res) => {
 
         if (isHeic) {
             console.log("Converting HEIC to JPEG:", fileName);
+            try {
+                const outputBuffer = await heicConvert({
+                    buffer: fileBuffer,
+                    format: "JPEG",
+                    quality: 0.9,
+                });
 
-            const outputBuffer = await heicConvert({
-                buffer: fileBuffer,
-                format: "JPEG",
-                quality: 0.9,
-            });
-
-            fileBuffer = Buffer.from(outputBuffer);
-            fileName = fileName.replace(/\.(heic|heif)$/i, ".jpg");
-            mimeType = "image/jpeg";
+                fileBuffer = Buffer.from(outputBuffer);
+                fileName = fileName.replace(/\.(heic|heif)$/i, ".jpg");
+                mimeType = "image/jpeg";
+            } catch (heicErr) {
+                console.warn("HEIC convert bypass / fallback:", heicErr.message);
+            }
         }
 
         // Optimize image
@@ -100,15 +103,21 @@ const uploadBill = async (req, res) => {
             mimeType
         );
 
+        const statusToUse = req.body.status || "draft";
+        const sourceToUse = req.body.source || "manual";
+
         const purchase = await Purchase.create({
             storeId: req.storeId,
             bill_image_url: secure_url,
             cloudinary_public_id: public_id,
             supplier_name: req.body.supplier_name || "",
+            supplier_gstin: req.body.supplier_gstin || "",
+            bill_no: req.body.bill_no || "",
+            bill_date: req.body.bill_date || "",
             notes: req.body.notes || "",
             total_amount: Number(req.body.total_amount) || 0,
-            source: "auto_import",
-            status: "processing",
+            source: sourceToUse,
+            status: statusToUse,
         });
 
         return res.status(201).json({
@@ -122,6 +131,34 @@ const uploadBill = async (req, res) => {
             success: false,
             message: error.message,
         });
+    }
+};
+
+// ── POST /api/v1/purchase/draft ───────────────────────────────────────────
+const createDraftPurchase = async (req, res) => {
+    try {
+        const { supplier_name, supplier_gstin, bill_no, bill_date, notes, total_amount, bill_image_url } = req.body;
+        const purchase = await Purchase.create({
+            storeId: req.storeId,
+            supplier_name: supplier_name || "",
+            supplier_gstin: supplier_gstin || "",
+            bill_no: bill_no || "",
+            bill_date: bill_date || "",
+            notes: notes || "",
+            total_amount: Number(total_amount) || 0,
+            bill_image_url: bill_image_url || null,
+            source: "manual",
+            status: "draft",
+        });
+
+        return res.status(201).json({
+            success: true,
+            message: "Purchase draft created successfully",
+            data: purchase,
+        });
+    } catch (error) {
+        console.error("Create Draft Purchase Error:", error.message);
+        return res.status(500).json({ success: false, message: error.message });
     }
 };
 
@@ -438,4 +475,4 @@ const createManualPurchase = async (req, res) => {
     }
 };
 
-export { uploadBill, getAutoImportBills, getPurchases, deletePurchase, finalizePurchase, createManualPurchase, savePurchaseJson };
+export { uploadBill, createDraftPurchase, getAutoImportBills, getPurchases, deletePurchase, finalizePurchase, createManualPurchase, savePurchaseJson };

@@ -41,6 +41,7 @@ import stockMovementRouter from "./features/stockMovement/routes/stockMovementRo
 import savingsRouter from "./features/savings/routes/savingsRoutes.js";
 import adminBillingRouter from "./features/subscriptionAdmin/routes/adminBillingRoutes.js";
 import storeBillingRouter from "./features/billing/routes/storeBillingRoutes.js";
+import retailsathiRouter from "./features/retailsathi/routes/retailsathiRoutes.js";
 
 // 6. Routes
 app.use("/api/v1/analytics", analyticsRouter);
@@ -60,6 +61,7 @@ app.use("/api/v1/stock-movement", protect, stockMovementRouter);
 app.use("/api/v1/savings", protect, savingsRouter);
 app.use("/api/v1/admin/billing", adminBillingRouter);
 app.use("/api/v1/store/billing", storeBillingRouter);
+app.use("/retailsathi/api/v1", retailsathiRouter);
 
 app.get("/health", (req, res) => {
   res.status(200).json({ status: "ok" });

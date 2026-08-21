@@ -1,0 +1,62 @@
+[
+  {
+    "fileName": "bill_1.jpeg",
+    "elapsedMs": 14729,
+    "ocrTextLength": 3555,
+    "headerAccuracy": 78,
+    "headerHits": 7,
+    "headerTotal": 9,
+    "itemAccuracy": 77,
+    "totalItemFieldHits": 23,
+    "totalItemFieldChecks": 30,
+    "fieldAccuracies": {
+      "medicine_name": 100,
+      "batch_number": 0,
+      "qty": 100,
+      "amount": 100,
+      "exp_dt": 60,
+      "unit": 100
+    },
+    "overallAccuracy": 77
+  },
+  {
+    "fileName": "bill_2.jpeg",
+    "elapsedMs": 18282,
+    "ocrTextLength": 5455,
+    "headerAccuracy": 100,
+    "headerHits": 10,
+    "headerTotal": 10,
+    "itemAccuracy": 96,
+    "totalItemFieldHits": 23,
+    "totalItemFieldChecks": 24,
+    "fieldAccuracies": {
+      "medicine_name": 100,
+      "batch_number": 75,
+      "qty": 100,
+      "amount": 100,
+      "exp_dt": 100,
+      "unit": 100
+    },
+    "overallAccuracy": 96
+  },
+  {
+    "fileName": "bill_3.jpeg",
+    "elapsedMs": 15791,
+    "ocrTextLength": 5885,
+    "headerAccuracy": 78,
+    "headerHits": 7,
+    "headerTotal": 9,
+    "itemAccuracy": 80,
+    "totalItemFieldHits": 48,
+    "totalItemFieldChecks": 60,
+    "fieldAccuracies": {
+      "medicine_name": 90,
+      "batch_number": 40,
+      "qty": 100,
+      "amount": 70,
+      "exp_dt": 80,
+      "unit": 100
+    },
+    "overallAccuracy": 80
+  }
+]

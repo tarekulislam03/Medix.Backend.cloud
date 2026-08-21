@@ -210,6 +210,7 @@ export const checkoutPayloads = {
 // AI Import confirm payload
 // ──────────────────────────────────────────────────────────────────────────────
 export const autoImportConfirmPayload = {
+  purchaseId: new ObjectId().toString(),
   items: [
     {
       medicine_name: 'PANTOPRAZOLE 40',

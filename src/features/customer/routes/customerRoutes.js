@@ -14,12 +14,17 @@ import {
 
 const customerRouter = Router();
 
-customerRouter.post("/create", createCustomer);
-customerRouter.get("/get", getAllCustomers);
-customerRouter.get("/get/:id", getCustomerById);
-customerRouter.put("/update/:id", updateCustomer);
-customerRouter.delete("/delete/:id", deleteCustomer);
+customerRouter.get("/", getAllCustomers);
+customerRouter.post("/", createCustomer);
 customerRouter.get("/search", searchCustomer);
+customerRouter.get("/get", getAllCustomers);
+customerRouter.post("/create", createCustomer);
+customerRouter.get("/get/:id", getCustomerById);
+customerRouter.get("/:id", getCustomerById);
+customerRouter.put("/update/:id", updateCustomer);
+customerRouter.put("/:id", updateCustomer);
+customerRouter.delete("/delete/:id", deleteCustomer);
+customerRouter.delete("/:id", deleteCustomer);
 customerRouter.get("/lastpurchase/:id", getCustomerLastPurchase);
 customerRouter.get("/credit/:id", getCustomerCredit);
 customerRouter.post("/pay-due/:id", payCustomerDue);

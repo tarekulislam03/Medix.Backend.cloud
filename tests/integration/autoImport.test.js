@@ -75,6 +75,7 @@ describe('Auto Import Confirm API Integration', () => {
     it('should correctly handle duplicate batches in the same payload', async () => {
       // Create a payload with duplicate batches
       const payload = {
+        purchaseId: IDS.store.toString(),
         items: [
           {
             medicine_name: 'PARACETAMOL 500',
@@ -113,7 +114,7 @@ describe('Auto Import Confirm API Integration', () => {
       const res = await request(app)
         .post('/api/v1/product/auto-import/confirm')
         .set('Authorization', `Bearer ${token}`)
-        .send({ items: 'not-an-array' }); // Invalid format
+        .send({ purchaseId: IDS.store.toString(), items: 'not-an-array' }); // Invalid format
 
       expect(res.status).toBe(400);
       expect(res.body.success).toBe(false);
@@ -122,6 +123,7 @@ describe('Auto Import Confirm API Integration', () => {
 
     it('should skip items without medicine_name', async () => {
       const payload = {
+        purchaseId: IDS.store.toString(),
         items: [
           {
             mrp: 50,

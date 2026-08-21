@@ -317,7 +317,7 @@ export const confirmImport = async (req, res) => {
                                 expiry_date: expiryDate || null,
                                 batch_number: batchNumber,
                                 hsn_code: item.hsn_code || "",
-                                gst: item.gst_percentage ? cleanNumber(item.gst_percentage) : 0,
+                                gst: (item.gst_percentage !== undefined && item.gst_percentage !== null && Number(item.gst_percentage) > 0) ? cleanNumber(item.gst_percentage) : 5,
                                 barcode,
                                 short_barcode: shortBarcode,
                             },

@@ -125,7 +125,7 @@ describe('Inventory / Product API Integration', () => {
       expect(dbProduct.quantity).toBe(5); // Should remain unchanged
     });
 
-    it('should remove batch-specific products when stock reaches zero', async () => {
+    it('should retain batch-specific products with quantity 0 when stock reaches zero', async () => {
       // product3 has batch_number: 'AZ-B1' and quantity: 30
       const payload = {
         items: [
@@ -143,7 +143,8 @@ describe('Inventory / Product API Integration', () => {
       expect(res.status).toBe(200);
 
       const dbProduct = await Inventory.findById(IDS.product3);
-      expect(dbProduct).toBeNull(); // Should be deleted since batch is empty
+      expect(dbProduct).toBeTruthy(); // Batch record is retained
+      expect(dbProduct.quantity).toBe(0); // Quantity reaches 0
     });
 
     it('should retain non-batch products even when stock reaches zero', async () => {

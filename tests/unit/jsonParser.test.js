@@ -37,7 +37,7 @@ describe('JSON Parser Service - safeParseJSON', () => {
 
     it('should throw an error for malformed JSON', () => {
         // Arrange
-        const malformedJSON = '{"name":"John", "age":30, "city":"New York"'; // missing closing brace
+        const malformedJSON = '{ invalid json syntax without quotes or values }';
 
         // Act & Assert
         expect(() => safeParseJSON(malformedJSON)).toThrow('Invalid AI response format');

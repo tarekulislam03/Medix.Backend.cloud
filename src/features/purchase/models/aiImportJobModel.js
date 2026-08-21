@@ -62,7 +62,7 @@ const aiImportJobSchema = new Schema(
                 purchase_price: { type: Number, default: 0 },
                 mrp: { type: Number, default: 0 },
                 discount_percentage: { type: Number, default: 0 },
-                gst_percentage: { type: Number, default: 0 },
+                gst_percentage: { type: Number, default: 5 },
                 hsn_code: { type: String, default: "" },
                 total_amount: { type: Number, default: 0 },
                 item_confidence: { type: Number, default: 0 }, // 0–100

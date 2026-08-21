@@ -583,17 +583,17 @@ const autoImportConfirm = async (req, res) => {
     try {
         const { purchaseId, items } = req.body;
 
-        if (!purchaseId) {
-            return res.status(400).json({
-                success: false,
-                message: "Missing purchaseId"
-            });
-        }
-
         if (!Array.isArray(items) || !items.length) {
             return res.status(400).json({
                 success: false,
                 message: "Invalid items format"
+            });
+        }
+
+        if (!purchaseId) {
+            return res.status(400).json({
+                success: false,
+                message: "Missing purchaseId"
             });
         }
 

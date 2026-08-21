@@ -1,0 +1,78 @@
+{
+  "summary": {
+    "totalImagesProcessed": 3,
+    "averageTimeSeconds": 117.19,
+    "averageOcrAccuracyPercent": 100,
+    "averageLlmAccuracyPercent": 75,
+    "averagePromptTokens": 3299,
+    "averageCompletionTokens": 1271,
+    "averageTotalTokens": 4570,
+    "intervalMinutes": 2,
+    "benchmarkExecutedAt": "2026-08-13T17:04:29.204Z"
+  },
+  "detailedResults": [
+    {
+      "imageName": "bill_1.jpeg",
+      "timeTakenSeconds": 55.06,
+      "timeTakenMs": 55056,
+      "ocrAccuracyPercent": 100,
+      "llmAccuracyPercent": 63,
+      "fieldBreakdown": {
+        "name": 97,
+        "batch": 0,
+        "price": 40,
+        "hsn": 60,
+        "qty": 100
+      },
+      "overallConfidence": 99,
+      "extractedItemsCount": 5,
+      "promptTokens": 2972,
+      "completionTokens": 1009,
+      "totalTokens": 3981,
+      "modelUsed": "google/gemma-4-26b-a4b-it:free",
+      "processedAt": "2026-08-13T16:55:32.481Z"
+    },
+    {
+      "imageName": "bill_2.jpeg",
+      "timeTakenSeconds": 73.85,
+      "timeTakenMs": 73854,
+      "ocrAccuracyPercent": 100,
+      "llmAccuracyPercent": 95,
+      "fieldBreakdown": {
+        "name": 100,
+        "batch": 75,
+        "price": 100,
+        "hsn": 100,
+        "qty": 100
+      },
+      "overallConfidence": 100,
+      "extractedItemsCount": 4,
+      "promptTokens": 3106,
+      "completionTokens": 897,
+      "totalTokens": 4003,
+      "modelUsed": "google/gemma-4-26b-a4b-it:free",
+      "processedAt": "2026-08-13T16:58:46.436Z"
+    },
+    {
+      "imageName": "bill_3.jpeg",
+      "timeTakenSeconds": 222.67,
+      "timeTakenMs": 222673,
+      "ocrAccuracyPercent": 100,
+      "llmAccuracyPercent": 67,
+      "fieldBreakdown": {
+        "name": 96,
+        "batch": 40,
+        "price": 10,
+        "hsn": 80,
+        "qty": 100
+      },
+      "overallConfidence": 100,
+      "extractedItemsCount": 10,
+      "promptTokens": 3819,
+      "completionTokens": 1907,
+      "totalTokens": 5726,
+      "modelUsed": "google/gemma-4-26b-a4b-it:free",
+      "processedAt": "2026-08-13T17:04:29.203Z"
+    }
+  ]
+}
