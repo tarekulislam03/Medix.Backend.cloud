@@ -15,8 +15,29 @@ app.use(apiLogger);
 // 2. Security headers
 app.use(helmet());
 
-// 3. CORS 
-app.use(cors());
+// 3. CORS Configuration
+const allowedOrigins = [
+  'https://app.usemedix.online',
+  'https://usemedix.online',
+  'http://localhost:3000',
+  'http://localhost:5173',
+  'http://localhost:8081',
+  'http://localhost:19006'
+];
+
+app.use(cors({
+  origin: (origin, callback) => {
+    // allow requests with no origin (like mobile apps, curl, or server-to-server)
+    if (!origin || allowedOrigins.includes(origin) || origin.endsWith('.usemedix.online')) {
+      callback(null, true);
+    } else {
+      callback(null, true); // fallback to allow during production deployment
+    }
+  },
+  credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With', 'Accept', 'storeid', 'storeId']
+}));
 
 // 4. Parse body
 app.use(express.json({ limit: '200kb' }));
