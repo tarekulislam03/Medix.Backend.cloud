@@ -12,10 +12,7 @@ const app = express();
 // 1. Logging middleware
 app.use(apiLogger);
 
-// 2. Security headers
-app.use(helmet());
-
-// 3. CORS Configuration
+// 2. CORS Configuration (Must come before helmet)
 const allowedOrigins = [
   'https://app.usemedix.online',
   'https://usemedix.online',
@@ -37,6 +34,12 @@ app.use(cors({
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With', 'Accept', 'storeid', 'storeId']
+}));
+
+// 3. Security headers
+app.use(helmet({
+  crossOriginResourcePolicy: { policy: "cross-origin" },
+  crossOriginOpenerPolicy: { policy: "same-origin-allow-popups" }
 }));
 
 // 4. Parse body
