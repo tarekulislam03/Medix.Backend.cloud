@@ -34,6 +34,14 @@ const StoreSchema = new mongoose.Schema({
   isBlocked: {
     type: Boolean,
     default: false
+  },
+  setupCost: {
+    type: Number,
+    default: 0
+  },
+  amc: {
+    type: Number,
+    default: 0
   }
 }, { timestamps: true });
 

@@ -14,6 +14,7 @@ const upload = multer({
     fileFilter: (_req, file, cb) => {
         const allowed = [
             "image/jpeg",
+            "image/jpg",
             "image/png",
             "image/webp",
             "image/heic",
@@ -33,4 +34,8 @@ router.get("/ai-import/jobs", aiImportController.getJobs);
 router.post("/ai-import/confirm", aiImportController.confirmImport);
 router.patch("/ai-import/:id/reject", aiImportController.rejectImport);
 
+// ── External bill-to-json proxy (avoids browser CORS) ───────────────────────
+router.post("/ai-import/parse-bill", upload.single("bill"), aiImportController.parseBillProxy);
+
 export default router;
+

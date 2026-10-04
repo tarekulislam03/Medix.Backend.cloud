@@ -1,10 +1,11 @@
 import express from "express";
-import { setupSubscription, getPendingApprovals, approvePayment, getAllSubscriptions, getAllStores, markAllPaid, deleteSubscription, addCustomAlert, removeCustomAlert, toggleTrial, toggleBlock } from "../controllers/adminBillingController.js";
+import { setupSubscription, getPendingApprovals, approvePayment, getAllSubscriptions, getAllStores, markAllPaid, deleteSubscription, addCustomAlert, removeCustomAlert, toggleTrial, toggleBlock, getPlatformRevenue } from "../controllers/adminBillingController.js";
 import { protect } from "../../../core/middleware/authMiddleware.js";
 
 const router = express.Router();
 
 router.get("/stores", getAllStores);
+router.get("/revenue", getPlatformRevenue);
 router.post("/setup", setupSubscription);
 router.post("/custom-alert", addCustomAlert);
 router.delete("/custom-alert/:storeId", removeCustomAlert);

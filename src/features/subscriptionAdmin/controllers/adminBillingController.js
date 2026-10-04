@@ -287,3 +287,59 @@ export const toggleBlock = async (req, res) => {
   }
 };
 
+// Platform Revenue Overview — for admin performance dashboard
+export const getPlatformRevenue = async (req, res) => {
+  try {
+    const subscriptions = await StoreSubscription.find({}, "totalAmount schedules createdAt").lean();
+
+    let totalRevenue = 0;
+    let collectedRevenue = 0;
+    let pendingRevenue = 0;
+
+    // Monthly collected map: { "YYYY-MM": amount }
+    const monthlyCollected = {};
+
+    subscriptions.forEach((sub) => {
+      totalRevenue += sub.totalAmount || 0;
+
+      (sub.schedules || []).forEach((sch) => {
+        if (sch.status === "paid") {
+          collectedRevenue += sch.amount || 0;
+
+          if (sch.paidDate) {
+            const key = new Date(sch.paidDate).toISOString().slice(0, 7); // "YYYY-MM"
+            monthlyCollected[key] = (monthlyCollected[key] || 0) + (sch.amount || 0);
+          }
+        } else {
+          pendingRevenue += sch.amount || 0;
+        }
+      });
+    });
+
+    // Sort monthly data last 12 months
+    const monthlyData = Object.entries(monthlyCollected)
+      .sort(([a], [b]) => a.localeCompare(b))
+      .slice(-12)
+      .map(([month, amount]) => ({ month, amount }));
+
+    const totalStores = subscriptions.length;
+    const paidStores = subscriptions.filter((s) =>
+      s.schedules?.every((sch) => sch.status === "paid")
+    ).length;
+
+    res.status(200).json({
+      success: true,
+      data: {
+        totalRevenue,
+        collectedRevenue,
+        pendingRevenue,
+        monthlyData,
+        totalStores,
+        paidStores,
+      },
+    });
+  } catch (error) {
+    console.error("Platform revenue error:", error);
+    res.status(500).json({ message: "Internal server error" });
+  }
+};

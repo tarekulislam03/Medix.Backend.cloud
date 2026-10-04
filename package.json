@@ -19,6 +19,7 @@
   "dependencies": {
     "@google/genai": "^2.7.0",
     "@openrouter/sdk": "^0.9.11",
+    "@supabase/supabase-js": "^2.116.0",
     "axios": "^1.13.6",
     "bcryptjs": "^3.0.3",
     "bwip-js": "^4.8.0",

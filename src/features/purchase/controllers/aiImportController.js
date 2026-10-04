@@ -7,6 +7,8 @@ import { extractWithCascade } from "../../../core/services/llmService.js";
 import { uploadToCloudinary } from "./purchaseController.js";
 import mongoose from "mongoose";
 import crypto from "crypto";
+import axios from "axios";
+import FormData from "form-data";
 
 // ═══════════════════════════════════════════════════════════════════════════════
 // POST /purchase/ai-import — Start a new AI import job (bulk images)
@@ -450,5 +452,44 @@ export const rejectImport = async (req, res) => {
     } catch (error) {
         console.error("Reject AI Import Error:", error.message);
         return res.status(500).json({ success: false, message: error.message });
+    }
+};
+
+// ═══════════════════════════════════════════════════════════════════════════════
+// POST /purchase/ai-import/parse-bill — Server-side proxy to bill-to-json API
+// Bypasses browser CORS restrictions by making the request server-to-server.
+// ═══════════════════════════════════════════════════════════════════════════════
+export const parseBillProxy = async (req, res) => {
+    try {
+        if (!req.file) {
+            return res.status(400).json({ success: false, message: "No image file provided." });
+        }
+
+        // Build a multipart form to forward to the external API
+        const form = new FormData();
+        form.append("files", req.file.buffer, {
+            filename: req.file.originalname || "bill.jpg",
+            contentType: req.file.mimetype || "image/jpeg",
+        });
+
+        const externalRes = await axios.post(
+            "https://bill-to-json.onrender.com/api/v1/parse-bill",
+            form,
+            {
+                headers: {
+                    ...form.getHeaders(),
+                    "X-API-Key": "R8qIi4IJ_Z19pcLQAU-N-NPlkHabWWJ9Q01T6YCXM6M",
+                },
+                timeout: 95_000, // 95 s — external service can be slow
+                responseType: "json",
+            }
+        );
+
+        return res.status(200).json(externalRes.data);
+    } catch (error) {
+        console.error("[parseBillProxy] Error:", error.message);
+        const status = error.response?.status || 500;
+        const msg = error.response?.data?.message || error.message || "External API error";
+        return res.status(status).json({ success: false, message: msg });
     }
 };

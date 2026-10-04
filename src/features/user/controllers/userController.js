@@ -2,6 +2,7 @@ import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
 import Store from "../../store/models/storeModel.js";
 import User from "../models/userModel.js";
+import { getSupabaseClients } from "../../../config/supabase.js";
 
 // register user
 const registerUser = async (req, res) => {
@@ -130,11 +131,66 @@ const logoutUser = async (req, res) => {
 // get all stores for admin operations
 const getStores = async (req, res) => {
   try {
-    const stores = await Store.find({}, "storeName _id contactNumber");
+    const stores = await Store.find({}, "storeName _id contactNumber setupCost amc isTrial isBlocked");
     res.json({ success: true, data: stores });
   } catch (err) {
     res.status(500).json({ success: false, message: err.message });
   }
 };
 
-export { registerUser, loginUser, logoutUser, getStores };
+// get total users number and calculate revenue/AMC from connected stores
+const getTotalUsers = async (req, res) => {
+  try {
+    // 1. Get all users with their connected stores populated
+    const users = await User.find({}).populate("storeId");
+    const mongoUsersCount = users.length;
+
+    let totalSetupCost = 0; // One Time Revenue
+    let totalAmc = 0; // Annual Maintenance Contract
+    const connectedStores = [];
+
+    for (const user of users) {
+      if (user.storeId) {
+        const store = user.storeId;
+        const setupCost = Number(store.setupCost) || 0;
+        const amc = Number(store.amc) || 0;
+
+        totalSetupCost += setupCost;
+        totalAmc += amc;
+
+        connectedStores.push({
+          userId: user._id,
+          phone: user.phone,
+          storeId: store._id,
+          storeName: store.storeName,
+          setupCost,
+          amc
+        });
+      }
+    }
+
+    return res.status(200).json({
+      success: true,
+      data: {
+        totalUsers: mongoUsersCount,
+        totalRevenue: totalSetupCost,
+        oneTimeRevenue: totalSetupCost,
+        setupCost: totalSetupCost,
+        totalAmc,
+        amc: totalAmc,
+        connectedStores,
+        mongodb: {
+          count: mongoUsersCount
+        }
+      }
+    });
+  } catch (error) {
+    return res.status(500).json({
+      success: false,
+      message: "Failed to fetch metrics and users",
+      error: error.message
+    });
+  }
+};
+
+export { registerUser, loginUser, logoutUser, getStores, getTotalUsers };

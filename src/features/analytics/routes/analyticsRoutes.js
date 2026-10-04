@@ -15,6 +15,9 @@ import { generateReportForStore } from "../controllers/whatsappReportController.
 
 const analyticsRouter = express.Router();
 
+analyticsRouter.get("/overview", getOverview);
+analyticsRouter.get("/api-usage", getApiUsage);
+analyticsRouter.get("/user-activity", getUserActivity);
 analyticsRouter.get("/ocr-ai", getOcrAiAnalytics);
 analyticsRouter.get("/errors", getErrors);
 analyticsRouter.get("/live-requests", getLiveRequests);
@@ -25,4 +28,5 @@ analyticsRouter.get("/recommendations", protect, getBillingRecommendations);
 analyticsRouter.get("/whatsapp-report/:storeId", protect, generateReportForStore);
 
 export default analyticsRouter;
+
 
