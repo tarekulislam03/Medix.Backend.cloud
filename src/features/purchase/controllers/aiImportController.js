@@ -116,53 +116,93 @@ export const startImport = async (req, res) => {
                     status: "processing",
                 });
 
-                if (optimizedImages.length === 0) {
-                    throw new Error("All images failed optimization. Cannot proceed with AI extraction.");
-                }
-
-                // ── Step 2: LLM Cascade (multi-image prompt) ─────────────────
+                // ── Step 2: Send images to bill-to-json API ─────────────────
                 console.log(
-                    `[AI Import][${jobId}] Step 2: Running LLM cascade with ${optimizedImages.length} image(s)...`
+                    `[AI Import][${jobId}] Step 2: Forwarding ${files.length} image(s) to bill-to-json API...`
                 );
 
-                const cascadeResult = await extractWithCascade(optimizedImages);
+                const form = new FormData();
+                for (let i = 0; i < files.length; i++) {
+                    const file = files[i];
+                    form.append("files", file.buffer, {
+                        filename: file.originalname || `bill_${i + 1}.jpg`,
+                        contentType: file.mimetype || "image/jpeg",
+                    });
+                }
 
+                const externalRes = await axios.post(
+                    "https://bill-to-json.onrender.com/api/v1/parse-bill",
+                    form,
+                    {
+                        headers: {
+                            ...form.getHeaders(),
+                            "X-API-Key": "R8qIi4IJ_Z19pcLQAU-N-NPlkHabWWJ9Q01T6YCXM6M",
+                        },
+                        timeout: 95_000,
+                        responseType: "json",
+                    }
+                );
+
+                const apiData = externalRes.data || {};
                 const processingTime = Date.now() - t0;
 
-                // ── Step 3: Extract invoice metadata ─────────────────────────
-                const invoiceMeta = cascadeResult.invoice || {};
+                // ── Step 3: Extract invoice metadata & items ─────────────────────────
+                const extractedItems = (apiData.items || []).map((it) => {
+                    const qty = Number(it.quantity) || 0;
+                    const rate = Number(it.rate) || Number(it.purchase_price) || 0;
+                    const mrp = Number(it.mrp) || 0;
+                    const discount = Number(it.discount) || Number(it.discount_percentage) || 0;
+                    const gst = Number(it.gst) || Number(it.gst_percentage) || 5;
+                    const itemTotal = Number(it.total_amount) || (qty * (rate || mrp));
+
+                    return {
+                        medicine_name: it.medicine_name || "",
+                        batch_number: it.batch_number || "",
+                        expiry_date: it.expiry_date || "",
+                        quantity: qty,
+                        unit: it.unit || "",
+                        purchase_price: rate,
+                        mrp: mrp,
+                        discount_percentage: discount,
+                        gst_percentage: gst,
+                        hsn_code: it.hsn_code || "",
+                        total_amount: itemTotal,
+                        item_confidence: 100,
+                    };
+                });
+
+                const rawConf = apiData.overall_confidence;
+                const overallConfidence = typeof rawConf === 'number'
+                    ? (rawConf <= 1 ? Math.round(rawConf * 100) : Math.round(rawConf))
+                    : 95;
 
                 // ── Step 4: Update job with results ──────────────────────────
                 await AIImportJob.findByIdAndUpdate(jobId, {
-                    status: cascadeResult.status,
-                    extracted_items: cascadeResult.items,
-                    overall_confidence: cascadeResult.overallConfidence,
-                    llm_used: cascadeResult.modelUsed,
-                    llm_attempts: cascadeResult.attempts,
+                    status: "review_ready",
+                    extracted_items: extractedItems,
+                    overall_confidence: overallConfidence,
+                    llm_used: apiData.model_version || "bill-to-json-api",
                     processing_time_ms: processingTime,
-                    validation_warnings: cascadeResult.validationWarnings,
+                    validation_warnings: apiData.flags || [],
 
-                    // Fill in LLM-extracted metadata (user-provided values take priority)
-                    bill_no: invoiceMeta.invoice_number || "",
-                    supplier_gstin: invoiceMeta.supplier_gstin || "",
-                    supplier_name:
-                        supplierName || invoiceMeta.supplier_name || "",
-                    bill_date:
-                        billDate || invoiceMeta.invoice_date || "",
+                    bill_no: apiData.bill_no || "",
+                    supplier_gstin: apiData.supplier_gstin || "",
+                    supplier_name: supplierName || apiData.supplier_name || "",
+                    bill_date: billDate || apiData.bill_date || "",
+                    total_amount: totalAmount || Number(apiData.total_amount) || 0,
                 });
 
                 console.log(
-                    `[AI Import][${jobId}] ✓ Complete — status: ${cascadeResult.status}, ` +
-                    `confidence: ${cascadeResult.overallConfidence}%, ` +
-                    `items: ${cascadeResult.items.length}, ` +
-                    `model: ${cascadeResult.modelUsed}, ` +
+                    `[AI Import][${jobId}] ✓ Complete — status: review_ready, ` +
+                    `items: ${extractedItems.length}, ` +
+                    `model: ${apiData.model_version || "bill-to-json-api"}, ` +
                     `time: ${processingTime}ms`
                 );
             } catch (bgError) {
-                console.error(`[AI Import][${jobId}] FATAL:`, bgError);
+                console.error(`[AI Import][${jobId}] FATAL:`, bgError.response?.data?.detail || bgError.message);
                 await AIImportJob.findByIdAndUpdate(jobId, {
                     status: "failed",
-                    error_message: bgError.message,
+                    error_message: bgError.response?.data?.detail || bgError.response?.data?.message || bgError.message,
                     processing_time_ms: Date.now() - t0,
                 }).catch(() => {}); // swallow DB errors during failure update
             }
